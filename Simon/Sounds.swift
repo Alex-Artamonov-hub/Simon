@@ -6,6 +6,7 @@
 //
 
 
+
 import AVFoundation
 
 class Sounds {
@@ -17,7 +18,7 @@ class Sounds {
             forResource: name,
             withExtension: "wav"
         ) else {
-            print("Could not find \(name).wav")
+            print("Missing sound: \(name).wav")
             return
         }
 
@@ -26,7 +27,7 @@ class Sounds {
             player?.prepareToPlay()
             player?.play()
         } catch {
-            print("Error playing sound: \(error)")
+            print(error.localizedDescription)
         }
     }
 
